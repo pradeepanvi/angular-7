@@ -9,6 +9,10 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AddressComponent } from './user/address/address.component';
+import { EditAddressComponent } from './user/address/edit-address/edit-address.component';
+import { StartAddressComponent } from './user/address/start-address/start-address.component';
+import { UserService } from './shared/user.service';
+import { AddressService } from "./shared/address.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { AddressComponent } from './user/address/address.component';
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    AddressComponent
+    AddressComponent,
+    EditAddressComponent,
+    StartAddressComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,7 @@ import { AddressComponent } from './user/address/address.component';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService, AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

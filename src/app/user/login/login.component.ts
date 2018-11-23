@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Http } from "@angular/http";
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Http } from "@angular/http";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(public http:Http) { }
+  constructor(public http:Http, public userService:UserService) { }
 
   ngOnInit() {
     this.initForm();
@@ -20,8 +21,9 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.http.post('http://localhost:3000/user/login/', this.loginForm.value).subscribe(
       (res) => {
-        console.log(res.json());
-      }
+        console.log(res.json().token);
+        this.userService.setToken(res.json().token);
+      },
     )
     console.log(this.loginForm.value);
   }
