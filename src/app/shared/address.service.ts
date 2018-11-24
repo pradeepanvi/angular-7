@@ -31,31 +31,39 @@ export class AddressService {
         const headers = new Headers({'Authorization':this.userService.token})
         this.http.get('http://localhost:3000/user/address/', {headers: headers}).subscribe(
             (res) => {
-              this.addresses = res.json();
+              this.addresses = res.json().address;
+            //   return this.addresses.slice();
+            //   console.log(this.addresses);
             }
         )
-        return this.addresses.slice();
     }
     addAddress(addresses: Address[]){
         const headers = new Headers({'Authorization':this.userService.token})
         this.http.post('http://localhost:3000/user/address/', addresses, {headers: headers}).subscribe(
             (res) => {
               this.addresses = res.json();
-              this.addressesChanged.next(this.addresses.slice());
             }
         )        
     }
-    updateAddress(newAddress: Address[]){
+    updateAddress(newAddress){
         console.log(this.adderss_id);
         const headers = new Headers({'Authorization':this.userService.token})
         this.http.patch('http://localhost:3000/user/address/'+this.adderss_id, newAddress, {headers: headers}).subscribe(
             (res) => {
               this.addresses = res.json();
-              this.addressesChanged.next(this.addresses.slice());
+              console.log(this.addresses);
+              //this.addressesChanged.next(this.addresses.slice());
             }
         )        
     }
-
+    deleteAddress(id, _id){
+        const headers = new Headers({'Authorization':this.userService.token})
+        this.http.delete('http://localhost:3000/user/address/'+_id, {headers: headers}).subscribe(
+            (res) => {
+              this.addresses = res.json();
+            }
+        )
+    }
     setAddressID(id){
         this.adderss_id = id;
     }

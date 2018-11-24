@@ -10,7 +10,7 @@ import { AddressService } from '../../../shared/address.service';
   styleUrls: ['./start-address.component.scss']
 })
 export class StartAddressComponent implements OnInit, AfterViewInit {
-  address = [];
+  address:any = [];
 
   constructor(public router:Router,
               public route: ActivatedRoute,
@@ -22,12 +22,12 @@ export class StartAddressComponent implements OnInit, AfterViewInit {
     const headers = new Headers({'Authorization':this.userService.token})
     this.http.get('http://localhost:3000/user/address/', {headers: headers}).subscribe(
         (res) => {
-          console.log(res.json().address)
-          this.address = res.json().address
+          this.address = res.json().address;
         }
     )    
   }
   ngAfterViewInit(){
+    console.log('Helo');
   }
 
   addAddress(){
@@ -40,7 +40,17 @@ export class StartAddressComponent implements OnInit, AfterViewInit {
     console.log(_id)
   }
   delete(id, _id){
-
+    const headers = new Headers({'Authorization':this.userService.token})
+    this.http.delete('http://localhost:3000/user/address/'+_id, {headers: headers}).subscribe(
+        (res) => {
+          res.json();
+        }
+    )
+    this.http.get('http://localhost:3000/user/address/', {headers: headers}).subscribe(
+      (res) => {
+        this.address = res.json().address;
+      }
+    )    
   }
   default(id, _id){
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Http, Headers } from '@angular/http';
 import { UserService } from '../../../shared/user.service';
@@ -11,13 +11,12 @@ import { Address } from '../../../shared/address.model';
   templateUrl: './edit-address.component.html',
   styleUrls: ['./edit-address.component.scss']
 })
-export class EditAddressComponent implements OnInit {
+export class EditAddressComponent implements OnInit, AfterContentInit, AfterViewInit {
   id: number;
   addressForm: FormGroup;
   token:any;
   editMode = false;
   address:any;
-
 
   constructor(public route: ActivatedRoute,
               public router: Router,
@@ -38,14 +37,32 @@ export class EditAddressComponent implements OnInit {
     )
   }
 
+  ngAfterContentInit(){
+  }
+  ngAfterViewInit(){
+  }
+
   onSubmit(){
     if(this.editMode){
-      this.addressService.updateAddress(this.addressForm.value);
+      const editModeData = [
+        {"propName":"fullname", "value":this.addressForm.value.fullname},
+        {"propName":"mobile", "value":this.addressForm.value.mobile},
+        {"propName":"streetadd1", "value":this.addressForm.value.streetadd1},
+        {"propName":"streetadd2", "value":this.addressForm.value.streetadd2},
+        {"propName":"landmark", "value":this.addressForm.value.landmark},
+        {"propName":"city", "value":this.addressForm.value.city},
+        {"propName":"state", "value":this.addressForm.value.state},
+        {"propName":"pincode", "value":this.addressForm.value.pincode},
+        {"propName":"addresstype", "value":this.addressForm.value.addresstype},
+      ];
+      console.log(editModeData);
+
+      this.addressService.updateAddress(editModeData);
     } else {
       this.addressService.addAddress(this.addressForm.value);
     }
-    console.log(this.token + ', ' + this.userService.token);
-    console.log(this.addressForm.value)
+    //console.log(this.token + ', ' + this.userService.token);
+    //console.log(this.addressForm.value)
   }
 
   private initForm(){
