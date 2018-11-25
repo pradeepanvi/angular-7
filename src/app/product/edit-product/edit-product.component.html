@@ -1,0 +1,18 @@
+<div class="form_area">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <h1>Add a Product</h1>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" formControlName="name" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Price</label>
+      <input type="text" class="form-control" formControlName="price" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Product Image</label>
+      <input type="file" class="form-control" formControlName="productImage" placeholder="">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+</div>

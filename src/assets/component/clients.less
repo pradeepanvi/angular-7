@@ -1,0 +1,54 @@
+#clients{
+  .com;
+  color: @input-bg;
+  background: @292929;
+  ul{
+      margin-left: -5px;
+      margin-right: -5px;
+      li{
+          width: 25%;
+          .f_left;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-bottom: 10px;
+          text-align: center;
+          opacity: 0.5;
+          @media (max-width: @screen-xs-max){
+              width: 33.333%;
+          }
+          @media (max-width: @screen-xxs-max){
+              width: 50%;
+          }
+          &:hover{
+              opacity: 1;
+          }
+          aside{
+              position: relative;
+              padding: 10px;
+              border: 1px solid @white-color;
+              @media (max-width: @screen-xs-max){
+                  padding: 5px;
+              }
+              &:after{
+                content:'';
+                position:absolute;
+                background: @white-color;
+                top:10px;
+                bottom:10px;
+                left:10px;
+                right:10px;
+                @media (max-width: @screen-xs-max){
+                    top: 5px;
+                    bottom: 5px;
+                    left: 5px;
+                    right: 5px;
+                }
+              }
+              img{
+                  position: relative;
+                  z-index: 10;
+              }
+          }
+      }
+  }
+}

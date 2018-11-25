@@ -1,0 +1,19 @@
+<h1>Products</h1>
+<a class="btn" (click)="addProduct()">Add Address</a>
+<div class="row">
+    <div class="col-md-4" *ngFor="let addr of products; let id=index">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <p class="card-head"><strong>{{addr.name}}</strong></p>
+            <p class="card-text">{{addr.price}}</p>
+            <p class="card-text">{{addr.productImage}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button type="button" (click)="edit(id, addr._id)" class="btn btn-sm btn-outline-secondary">Edit {{id}}</button>
+                <button type="button" (click)="delete(id, addr._id)" class="btn btn-sm btn-outline-secondary">Delete</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
