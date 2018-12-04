@@ -12,8 +12,7 @@ export class ProductService {
     addProduct(value){
         console.log(this.userService.token);
         console.log(value);
-        const headers = new Headers({'Authorization':this.userService.token})
-        this.http.post('http://localhost:3000/products/', {headers: headers}, value).subscribe(
+        this.http.post('http://localhost:3000/products/', value).subscribe(
             (res) => {
                 console.log(res.json())
             }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FileSelectDirective } from "ng2-file-upload";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { StartProductComponent } from './product/start-product/start-product.com
     OrderComponent,
     DetailProductComponent,
     StartProductComponent,
+    FileSelectDirective,    
   ],
   imports: [
     BrowserModule,

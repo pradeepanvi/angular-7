@@ -1,0 +1,1661 @@
+.chosen-select {
+    width: 100%;
+  }
+  .chosen-select-deselect {
+    width: 100%;
+  }
+  .chosen-container {
+    display: inline-block;
+    font-size: 22px;
+    position: relative;
+    vertical-align: top;
+  }
+  .chosen-container .chosen-drop {
+    background: #fff;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+    margin-top: -1px;
+    position: absolute;
+    top: 100%;
+    left: -9000px;
+    z-index: 1060;
+  }
+  .chosen-container.chosen-with-drop .chosen-drop {
+    left: 0;
+    right: 0;
+  }
+  .chosen-container .chosen-results {
+    margin: 0;
+    max-height: 240px;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chosen-container .chosen-results li {
+    display: none;
+    line-height: 1.42857143;
+    list-style: none;
+    margin: 0;
+    padding: 5px 6px;
+  }
+  .chosen-container .chosen-results li em {
+    background: #feffde;
+    font-style: normal;
+  }
+  .chosen-container .chosen-results li.group-result {
+    display: list-item;
+    cursor: default;
+    color: #999;
+    font-weight: bold;
+  }
+  .chosen-container .chosen-results li.group-option {
+    padding-left: 15px;
+  }
+  .chosen-container .chosen-results li.active-result {
+    cursor: pointer;
+    display: list-item;
+  }
+  .chosen-container .chosen-results li.highlighted {
+    background-color: #3c3d41;
+    background-image: none;
+    color: #fff;
+  }
+  .chosen-container .chosen-results li.highlighted em {
+    background: transparent;
+  }
+  .chosen-container .chosen-results li.disabled-result {
+    display: list-item;
+    color: #777777;
+  }
+  .chosen-container .chosen-results .no-results {
+    background: #eeeeee;
+    display: list-item;
+  }
+  .chosen-container .chosen-results-scroll {
+    background: white;
+    margin: 0 4px;
+    position: absolute;
+    text-align: center;
+    width: 321px;
+    z-index: 1;
+  }
+  .chosen-container .chosen-results-scroll span {
+    display: inline-block;
+    height: 0;
+    text-indent: -5000px;
+    width: 9px;
+  }
+  .chosen-container .chosen-results-scroll-down {
+    bottom: 0;
+  }
+  .chosen-container .chosen-results-scroll-down span {
+    background: url("http://pkanvi.com/dev/identitycards_html/less/chosen-sprite.png") no-repeat -4px -3px;
+  }
+  .chosen-container .chosen-results-scroll-up span {
+    background: url("http://pkanvi.com/dev/identitycards_html/less/chosen-sprite.png") no-repeat -22px -3px;
+  }
+  .chosen-container-single .chosen-single {
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    border: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: block;
+    height: 59px;
+    overflow: hidden;
+    padding: 0px 5px 0 14px;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  @media (max-width: 767px) {
+    .chosen-container-single .chosen-single {
+      height: 40px;
+    }
+  }
+  .chosen-container-single .chosen-single span {
+    line-height: 59px;
+    display: block;
+    margin-left: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @media (max-width: 767px) {
+    .chosen-container-single .chosen-single span {
+      line-height: 40px;
+    }
+  }
+  .chosen-container-single .chosen-single abbr {
+    background: url("http://pkanvi.com/dev/identitycards_html/less/chosen-sprite.png") right top no-repeat;
+    display: block;
+    font-size: 1px;
+    height: 10px;
+    position: absolute;
+    right: 26px;
+    top: 12px;
+    width: 12px;
+  }
+  .chosen-container-single .chosen-single abbr:hover {
+    background-position: right -11px;
+  }
+  .chosen-container-single .chosen-single.chosen-disabled .chosen-single abbr:hover {
+    background-position: right 2px;
+  }
+  .chosen-container-single .chosen-single div {
+    display: block;
+    /* height: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 15px;
+    margin-top: -7.5px;
+  }
+  .chosen-container-single .chosen-single div b {
+    background: url("http://pkanvi.com/dev/identitycards_html/images/arrow-down.png") no-repeat center;
+    display: block;
+    height: 100%;
+    width: 100%;
+    /* margin-top: 10px; */
+    /* margin-left: 5px; */
+  }
+  .chosen-container-single .chosen-default {
+    color: #999;
+  }
+  .chosen-container-single .chosen-search {
+    margin: 0;
+    padding: 3px 4px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 1000;
+    display: none;
+  }
+  .chosen-container-single .chosen-search input[type="text"] {
+    background: url("http://pkanvi.com/dev/identitycards_html/images/sprite.png") no-repeat -18px 7px, #ffffff;
+    border: 1px solid #cccccc;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    margin: 1px 0;
+    padding: 4px 20px 4px 4px;
+    width: 100%;
+  }
+  .chosen-container-single .chosen-drop {
+    margin-top: -1px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+  .chosen-container-single-nosearch .chosen-search input {
+    position: absolute;
+    left: -9000px;
+  }
+  .chosen-container-multi .chosen-choices {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    cursor: text;
+    height: auto !important;
+    height: 1%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+  }
+  .chosen-container-multi .chosen-choices li {
+    float: left;
+    list-style: none;
+  }
+  .chosen-container-multi .chosen-choices .search-field {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  .chosen-container-multi .chosen-choices .search-field input[type="text"] {
+    background: transparent !important;
+    border: 0 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #555555;
+    height: 32px;
+    margin: 0;
+    padding: 4px;
+    outline: 0;
+  }
+  .chosen-container-multi .chosen-choices .search-field .default {
+    color: #999;
+  }
+  .chosen-container-multi .chosen-choices .search-choice {
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background-image: -o-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background-image: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    color: #333333;
+    cursor: default;
+    line-height: 13px;
+    margin: 6px 0 3px 5px;
+    padding: 3px 20px 3px 5px;
+    position: relative;
+  }
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close {
+    background: url("http://pkanvi.com/dev/identitycards_html/images/sprite.png") no-repeat -18px 7px;
+    display: block;
+    font-size: 1px;
+    height: 10px;
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    width: 12px;
+    cursor: pointer;
+  }
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close:hover {
+    background-position: right -11px;
+  }
+  .chosen-container-multi .chosen-choices .search-choice-focus {
+    background: #d4d4d4;
+  }
+  .chosen-container-multi .chosen-choices .search-choice-focus .search-choice-close {
+    background-position: right -11px;
+  }
+  .chosen-container-multi .chosen-results {
+    margin: 0 0 0 0;
+    padding: 0;
+  }
+  .chosen-container-multi .chosen-drop .result-selected {
+    display: none;
+  }
+  .chosen-container-active .chosen-single {
+    /* -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6); */
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6); */
+    /* -webkit-transition: border linear .2s, box-shadow linear .2s; */
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+  .chosen-container-active.chosen-with-drop .chosen-single {
+    background-color: #fff;
+    /* -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6); */
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6); */
+    /* -webkit-transition: border linear .2s, box-shadow linear .2s; */
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+  .chosen-container-active.chosen-with-drop .chosen-single div {
+    background: transparent;
+    border-left: none;
+  }
+  .chosen-container-active.chosen-with-drop .chosen-single div b {
+    transform: rotate(-90deg);
+    /* margin-left: -9px; */
+  }
+  .chosen-container-active .chosen-choices {
+    border: 1px solid #66afe9;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+  .chosen-container-active .chosen-choices .search-field input[type="text"] {
+    color: #111 !important;
+  }
+  .chosen-container-active.chosen-with-drop .chosen-choices {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .chosen-disabled {
+    cursor: default;
+    opacity: 0.5 !important;
+  }
+  .chosen-disabled .chosen-single {
+    cursor: default;
+  }
+  .chosen-disabled .chosen-choices .search-choice .search-choice-close {
+    cursor: default;
+  }
+  .chosen-rtl {
+    text-align: right;
+  }
+  .chosen-rtl .chosen-single {
+    padding: 0 8px 0 0;
+    overflow: visible;
+  }
+  .chosen-rtl .chosen-single span {
+    margin-left: 26px;
+    margin-right: 0;
+    direction: rtl;
+  }
+  .chosen-rtl .chosen-single div {
+    left: 7px;
+    right: auto;
+  }
+  .chosen-rtl .chosen-single abbr {
+    left: 26px;
+    right: auto;
+  }
+  .chosen-rtl .chosen-choices .search-field input[type="text"] {
+    direction: rtl;
+  }
+  .chosen-rtl .chosen-choices li {
+    float: right;
+  }
+  .chosen-rtl .chosen-choices .search-choice {
+    margin: 6px 5px 3px 0;
+    padding: 3px 5px 3px 19px;
+  }
+  .chosen-rtl .chosen-choices .search-choice .search-choice-close {
+    background-position: right top;
+    left: 4px;
+    right: auto;
+  }
+  .chosen-rtl.chosen-container-single .chosen-results {
+    margin: 0 0 4px 4px;
+    padding: 0 4px 0 0;
+  }
+  .chosen-rtl .chosen-results .group-option {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-right: none;
+  }
+  .chosen-rtl .chosen-search input[type="text"] {
+    background: url("http://pkanvi.com/dev/identitycards_html/images/sprite.png") no-repeat -15px 7px, #ffffff;
+    direction: rtl;
+    padding: 4px 5px 4px 20px;
+  }
+  /**
+   * Owl Carousel v2.2.1
+   * Copyright 2013-2017 David Deutsch
+   * Licensed under  ()
+   */
+  /*
+   *  Owl Carousel - Core
+   */
+  .owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    /* position relative and z-index fix webkit rendering fonts issue */
+    position: relative;
+    z-index: 1;
+  }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */
+  }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: right;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  .owl-carousel .owl-item img {
+    display: block;
+  }
+  .owl-carousel.owl-logo .owl-item img {
+    display: block;
+    width: auto;
+    max-width: inherit;
+  }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none;
+  }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .owl-carousel.owl-loaded {
+    display: block;
+  }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block;
+  }
+  .owl-carousel.owl-hidden {
+    opacity: 0;
+  }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden;
+  }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab;
+  }
+  .owl-carousel.owl-rtl {
+    direction: rtl;
+  }
+  .owl-carousel.owl-logo.owl-rtl .owl-item {
+    float: right;
+  }
+  .owl-carousel.owl-logo.owl-rtl .owl-stage {
+    display: table;
+  }
+  .owl-carousel.owl-logo.owl-rtl .owl-item {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px;
+    float: none;
+  }
+  /* No Js */
+  .no-js .owl-carousel {
+    display: block;
+  }
+  /*
+   *  Owl Carousel - Animate Plugin
+   */
+  .owl-carousel .animated {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+  }
+  .owl-carousel .owl-animated-in {
+    z-index: 0;
+  }
+  .owl-carousel .owl-animated-out {
+    z-index: 1;
+  }
+  .owl-carousel .fadeOut {
+    animation-name: fadeOut;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  /*
+   * 	Owl Carousel - Auto Height Plugin
+   */
+  .owl-height {
+    transition: height 500ms ease-in-out;
+  }
+  /*
+   * 	Owl Carousel - Lazy Load Plugin
+   */
+  .owl-carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+  .owl-carousel .owl-item img.owl-lazy {
+    transform-style: preserve-3d;
+  }
+  /*
+   * 	Owl Carousel - Video Plugin
+   */
+  .owl-carousel .owl-video-wrapper {
+    position: relative;
+    height: 100%;
+    background: #000;
+  }
+  .owl-carousel .owl-video-play-icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    background: url("http://pkanvi.com/dev/identitycards_html/less/owl.video.play.png") no-repeat;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    transition: transform 100ms ease;
+  }
+  .owl-carousel .owl-video-play-icon:hover {
+    -ms-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+  }
+  .owl-carousel .owl-video-playing .owl-video-tn,
+  .owl-carousel .owl-video-playing .owl-video-play-icon {
+    display: none;
+  }
+  .owl-carousel .owl-video-tn {
+    opacity: 0;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 400ms ease;
+  }
+  .owl-carousel .owl-video-frame {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12 {
+      float: left;
+    }
+  }
+  @media (min-width: 992px) {
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-4,
+    .col-md-5,
+    .col-md-6,
+    .col-md-7,
+    .col-md-8,
+    .col-md-9,
+    .col-md-10,
+    .col-md-11,
+    .col-md-12 {
+      float: left;
+    }
+  }
+  @media (min-width: 1200px) {
+    .col-lg-1,
+    .col-lg-2,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-5,
+    .col-lg-6,
+    .col-lg-7,
+    .col-lg-8,
+    .col-lg-9,
+    .col-lg-10,
+    .col-lg-11,
+    .col-lg-12 {
+      float: left;
+    }
+  }
+  .f_left {
+    float: left;
+  }
+  .f_right {
+    float: right;
+  }
+  ul:before,
+  ul:after {
+    content: " ";
+    display: table;
+  }
+  ul:after {
+    clear: both;
+  }
+  ul:before,
+  ul:after {
+    content: " ";
+    display: table;
+  }
+  ul:after {
+    clear: both;
+  }
+  .call_bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media (max-width: 1199px) {
+    .desktop-lg_v {
+      display: none !important;
+    }
+  }
+  @media (max-width: 991px) {
+    .desktop-md_v {
+      display: none !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .desktop_v {
+      display: none !important;
+    }
+  }
+  @media (min-width: 768px) {
+    .mobile_v {
+      display: none !important;
+    }
+  }
+  @media (min-width: 992px) {
+    .mobile-md_v {
+      display: none !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mobile-lg_v {
+      display: none !important;
+    }
+  }
+  .btn-big {
+    padding: 0;
+    line-height: inherit;
+    width: 100%;
+  }
+  .btn-big.btn-small {
+    width: auto;
+    padding: 0 100px;
+  }
+  .form-control-big {
+    background: transparent;
+    height: 50px;
+    font-size: 18px;
+  }
+  .form-control-bigtextarea {
+    height: 100px;
+  }
+  @media (max-width: 767px) {
+    .form-control-big {
+      font-size: 14px;
+      height: 35px;
+    }
+    .form-control-bigtextarea {
+      height: 70px;
+    }
+  }
+  .form-control.invalid {
+    border: 1px solid red;
+  }
+  .form-control.valid {
+    border: 1px solid #4cae4c;
+  }
+  .help-block {
+    display: none;
+  }
+  .help-block.active {
+    display: block;
+  }
+  .btn-big {
+    font-size: 18px;
+    height: 50px;
+  }
+  @media (max-width: 767px) {
+    .btn-big {
+      font-size: 14px;
+      height: 35px;
+    }
+  }
+  a.btn-big {
+    line-height: 50px;
+  }
+  @media (max-width: 767px) {
+    a.btn-big {
+      line-height: 35px;
+    }
+  }
+  body {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: normal;
+    overflow-x: hidden;
+    font-size: 18px;
+    color: #171717;
+  }
+  @media (max-width: 767px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  ul,
+  ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  *,
+  *:after,
+  *:before {
+    outline: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .wrapper *,
+  .wrapper *:after,
+  .wrapper *:before {
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  }
+  img {
+    max-width: 100%;
+  }
+  div.wpcf7 {
+    direction: rtl;
+  }
+  div.wpcf7 .wpcf7-response-output {
+    width: 100%;
+    float: left;
+  }
+  .table_t {
+    display: table;
+    width: 100%;
+  }
+  .table_t .row_t {
+    display: table-row;
+  }
+  .table_t .cell_t {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .display_inline {
+    display: inline-block;
+  }
+  #map {
+    margin-top: 20px;
+  }
+  #map iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+    pointer-events: none;
+  }
+  @media (max-width: 767px) {
+    #map iframe {
+      height: 100vh;
+    }
+  }
+  .loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    display: block;
+    width: 100% !important;
+    background: #3b4f65;
+  }
+  .loader img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation: rotateIn 1s ease-in-out infinite alternate;
+    /* Chrome, Safari, Opera */
+    animation: rotateIn 1s ease-in-out infinite alternate;
+    margin-left: -85px;
+    margin-top: -50px;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+  }
+  @keyframes rotateIn {
+    from {
+      -webkit-transform: rotateY(-1800deg);
+      -ms-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+    to {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+  }
+  .bg_area {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .wrapper {
+    width: 100%;
+    float: left;
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    float: left;
+    width: 100%;
+  }
+  header.fixed,
+  header.fixed-inner {
+    background: #292929;
+  }
+  header.fixed .logo,
+  header.fixed-inner .logo {
+    border-color: #292929;
+    margin-bottom: -15px;
+  }
+  header.fixed .navbar .nav li,
+  header.fixed-inner .navbar .nav li {
+    margin-top: 5px;
+  }
+  @media (min-width: 768px) {
+    header {
+      position: fixed;
+    }
+  }
+  header.fixed-inner {
+    position: static;
+  }
+  header .logo {
+    float: left;
+    padding: 15px;
+    background: #fff;
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+    border: 1px solid transparent;
+  }
+  header .navbar {
+    font-size: 17px;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    header .navbar {
+      font-size: 21px;
+      float: right;
+      margin-top: 6px;
+    }
+  }
+  header .navbar .nav {
+    float: none;
+  }
+  @media (min-width: 992px) {
+    header .navbar .nav li {
+      margin-top: 10px;
+    }
+    header .navbar .nav li:not(:last-child) {
+      margin-right: 20px;
+    }
+    header .navbar .nav li a {
+      padding: 0 0 5px;
+      display: inline-block;
+      position: relative;
+    }
+    header .navbar .nav li a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      border-bottom: 1px solid #ff8e3f;
+    }
+    header .navbar .nav li a:hover:after {
+      width: 100%;
+    }
+  }
+  header .navbar .navbar-toggle {
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+  }
+  @media (min-width: 768px) {
+    .wrapper.open .navbar-toggle {
+      right: -110px;
+    }
+  }
+  @media (max-width: 991px) {
+    .wrapper {
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+      transform: translate(0px, 0px);
+    }
+    .wrapper header .navbar-collapse {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      display: table;
+      background: #fb3601;
+      top: 0;
+      right: 0;
+      transform: translate(100%, 0px);
+    }
+    .wrapper header .navbar-collapse .nav {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .wrapper header .navbar-collapse li a {
+      padding: 10px 15px !important;
+    }
+    .wrapper header .navbar-collapse li a:before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+    }
+    .wrapper header .navbar-collapse li a:hover:before {
+      border-bottom-color: transparent !important;
+    }
+    .wrapper header .navbar-collapse li.active a {
+      background: #e8252d;
+      color: #fff;
+    }
+    .wrapper header .navbar-collapse li.active a:before {
+      border-bottom-color: transparent !important;
+    }
+    .wrapper.open {
+      transform: translate(-100%, 0px);
+    }
+    .wrapper.open .navbar-toggle {
+      transform: translate(52px, 0);
+      z-index: 10;
+    }
+  }
+  header.header-2 {
+    position: relative;
+  }
+  #home {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd7801+0,fb3601+100 */
+    background: #fd7801;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #fd7801 0%, #fb3601 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #fd7801 0%, #fb3601 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #fd7801 0%, #fb3601 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd7801', endColorstr='#fb3601', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    color: #fff;
+    text-align: center;
+  }
+  #home .table_t {
+    height: 100vh;
+    text-align: center;
+  }
+  @media (max-width: 767px) {
+    #home .table_t {
+      font-size: 16px;
+    }
+  }
+  #home .table_t h1 {
+    font-size: 56px;
+  }
+  @media (max-width: 767px) {
+    #home .table_t h1 {
+      font-size: 40px;
+    }
+  }
+  #home .btn-warning {
+    margin-top: 20px;
+  }
+  #home .or {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  #home .or:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #fff;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  #home .or span {
+    display: inline-block;
+    color: #fd7801;
+    background: #fff;
+    border-radius: 3px;
+    position: relative;
+    padding: 5px 10px;
+  }
+  #home .go_down {
+    width: 40px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/arrow-down.svg');
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: 20px;
+    display: block;
+  }
+  .com {
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    .com {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  .com .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .com h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    .com h2 {
+      font-size: 30px;
+    }
+  }
+  #samples {
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    #samples {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #samples .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #samples h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    #samples h2 {
+      font-size: 30px;
+    }
+  }
+  #samples .slider {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #samples .slider .item {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #samples .slider .item img {
+    border-radius: 7px;
+    border: 1px solid #ddd;
+  }
+  #samples .slider .owl-nav div {
+    width: 16.5px;
+    height: 40px;
+    text-indent: 50px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/arrow.svg');
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-top: -20px;
+  }
+  #samples .slider .owl-nav div.owl-prev {
+    left: -30px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  #samples .slider .owl-nav div.owl-next {
+    right: -30px;
+  }
+  #samples .slider .owl-dots {
+    margin-top: 15px;
+    text-align: center;
+  }
+  #samples .slider .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    background: #171717;
+    display: inline-block;
+    margin: 0 2.5px;
+    opacity: 0.5;
+  }
+  #samples .slider .owl-dots .owl-dot.active,
+  #samples .slider .owl-dots .owl-dot:hover {
+    opacity: 1;
+  }
+  #our_product {
+    background: #f0f0f0;
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    #our_product {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #our_product .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #our_product h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    #our_product h2 {
+      font-size: 30px;
+    }
+  }
+  #our_product aside {
+    text-align: center;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+  }
+  #our_product aside .img_area {
+    margin-bottom: 15px;
+  }
+  #our_product aside p.head {
+    font-weight: bold;
+  }
+  #our_product aside p:not(.head) {
+    font-size: 16px;
+  }
+  #our_product aside:hover {
+    background: #ff8e3f;
+  }
+  #services {
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    #services {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #services .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #services h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    #services h2 {
+      font-size: 30px;
+    }
+  }
+  #services .round {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #eee;
+    text-align: center;
+  }
+  @media (min-width: 992px) {
+    #services .round {
+      width: 323px;
+      height: 390px;
+      padding: 49px;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -o-border-radius: 100%;
+    }
+    #services .round:nth-child(2),
+    #services .round:nth-child(3) {
+      margin-left: -15px;
+    }
+  }
+  @media (min-width: 1200px) {
+    #services .round {
+      width: 390px;
+    }
+  }
+  @media (max-width: 767px) {
+    #services .round {
+      font-size: 12px;
+    }
+  }
+  #services .round:hover {
+    background-color: #eee;
+  }
+  #services .round i {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 0 auto 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #services .round i.creative-icon {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/creative.svg');
+  }
+  #services .round i.identity-icon {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/identity.svg');
+  }
+  #services .round i.best-icon {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/best.svg');
+  }
+  @media (max-width: 767px) {
+    #services .round i {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  #services h3 {
+    font-weight: normal;
+    font-size: 25px;
+    margin-top: 22px;
+    margin-bottom: 13px;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 767px) {
+    #services h3 {
+      font-size: 21px;
+      line-height: 25px;
+    }
+  }
+  #clients {
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: #efefef;
+    background: #292929;
+  }
+  @media (max-width: 767px) {
+    #clients {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #clients .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #clients h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    #clients h2 {
+      font-size: 30px;
+    }
+  }
+  #clients ul {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  #clients ul li {
+    width: 25%;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    opacity: 0.5;
+  }
+  @media (max-width: 767px) {
+    #clients ul li {
+      width: 33.333%;
+    }
+  }
+  @media (max-width: 479px) {
+    #clients ul li {
+      width: 50%;
+    }
+  }
+  #clients ul li:hover {
+    opacity: 1;
+  }
+  #clients ul li aside {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #fff;
+  }
+  @media (max-width: 767px) {
+    #clients ul li aside {
+      padding: 5px;
+    }
+  }
+  #clients ul li aside:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  @media (max-width: 767px) {
+    #clients ul li aside:after {
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+    }
+  }
+  #clients ul li aside img {
+    position: relative;
+    z-index: 10;
+  }
+  #contact {
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    #contact {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  #contact .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #contact h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    #contact h2 {
+      font-size: 30px;
+    }
+  }
+  #contact .form_sec aside {
+    margin-bottom: 15px;
+  }
+  footer {
+    font-size: 12px;
+    width: 100%;
+    float: left;
+    color: #efefef;
+    background: #292929;
+  }
+  @media (min-width: 768px) {
+    footer {
+      font-size: 16px;
+    }
+  }
+  footer .top_footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    float: left;
+  }
+  @media (min-width: 768px) {
+    footer .top_footer {
+      text-align: center;
+    }
+  }
+  footer .top_footer h4 {
+    font-weight: normal;
+  }
+  footer .top_footer ul li {
+    width: 25%;
+    float: left;
+  }
+  @media (max-width: 991px) {
+    footer .top_footer ul li {
+      width: 50%;
+    }
+  }
+  @media (max-width: 479px) {
+    footer .top_footer ul li {
+      width: 100%;
+    }
+  }
+  footer .top_footer ul li a {
+    padding-left: 20px;
+    position: relative;
+  }
+  footer .top_footer ul li a:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: contain;
+  }
+  @media (max-width: 991px) {
+    footer .top_footer ul li a:before {
+      height: 10px;
+    }
+  }
+  footer .top_footer ul li.mail a:before {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/mail.svg');
+  }
+  footer .top_footer ul li.call a:before {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/call.svg');
+  }
+  footer .bottom_footer {
+    font-size: 12px;
+    border-top: 1px solid #171717;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    float: left;
+  }
+  footer .bottom_footer .copy_txt {
+    float: left;
+  }
+  @media (max-width: 479px) {
+    footer .bottom_footer .copy_txt {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  footer .bottom_footer .social_links {
+    float: right;
+  }
+  @media (max-width: 479px) {
+    footer .bottom_footer .social_links {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  footer .bottom_footer .social_links ul {
+    display: inline-block;
+  }
+  footer .bottom_footer .social_links ul li {
+    float: left;
+    margin-left: 10px;
+  }
+  footer .bottom_footer .social_links ul li a {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    text-indent: 30px;
+    overflow: hidden;
+  }
+  footer .bottom_footer .social_links ul li.fb a {
+    width: 9px;
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/facebook.svg');
+  }
+  footer .bottom_footer .social_links ul li.twitter a {
+    width: 22px;
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/twitter.svg');
+  }
+  footer .bottom_footer .social_links ul li.google a {
+    width: 22px;
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/google.svg');
+  }
+  footer .bottom_footer .social_links ul li.linkedin a {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/linkedin.svg');
+  }
+  footer .bottom_footer .social_links ul li.youtube a {
+    background-image: url('http://pkanvi.com/dev/identitycards_html/images/youtube.svg');
+  }
+  .flow_link {
+    position: relative !important;
+    width: 100%;
+    float: left;
+  }
+  .price-cal {
+    background: #efefef;
+    width: 100%;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    .price-cal {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  .price-cal .head_area {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .price-cal h2 {
+    font-size: 46px;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    .price-cal h2 {
+      font-size: 30px;
+    }
+  }
+  .price-cal .table_t {
+    height: 100%;
+  }
+  .price-cal .form_sec {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px 30px;
+  }
+  .price-cal .form_sec aside {
+    margin-bottom: 20px;
+  }
+  .price-cal .form_sec aside .head {
+    font-weight: bold;
+  }
+  .price-cal .form_sec .form_sec {
+    position: relative;
+    padding-top: 35px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+  .price-cal .form_sec .form_sec .btn-danger {
+    position: absolute;
+    right: -1px;
+    top: -35px;
+  }
+  .price-cal .form_sec .form_sec.table_t {
+    height: 430px;
+    text-align: center;
+  }
+  .price-cal .form_sec .btn-group {
+    width: 100%;
+  }
+  .price-cal .form_sec .btn-group .btn {
+    width: 50%;
+  }
+  
